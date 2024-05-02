@@ -1,0 +1,5 @@
+{
+    "mainMessage": "Website under migration. Testing should function normally, but expect SQL data delays post-migration.",
+    "sign": "Sign In",
+    "createAnAccount": "Create an Account"
+}
