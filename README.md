@@ -63,3 +63,30 @@ Use a [nossa comunidade](https://discord.gg/rdXbEvjsWu) para tirar dúvidas sobr
 
 
 Use a [nossa comunidade](https://discord.gg/rdXbEvjsWu) para tirar dúvidas sobre o processo ou envie uma mensagem diretamente a um especialista no chat da plataforma. 
+
+______________ apagar acima ^ 
+# Q.A Challenge Luma Store
+>  This is a challenge by [Coodesh](https://coodesh.com/)
+
+# Descrição do projeto
+Este é um desafio técnico da Coodesh utlizado para avaliar as habilidades do autor em relação a testes automatizados.
+
+Aqui aplicaremos os conceitos de teste caixa preta, onde testaremos a página https://magento.softwaretestingboard.com. 
+
+Neste projeto serão cobertos os seguintes aspectos do site: 
+- Se a página está carregando corretamente a home page;
+- Buscar por `shirt` no menu superior e revisar se a página de resultados carregou corretamente;
+- Adicionar um produto no carrinho;
+- Realizar checkout.
+
+# Linguagem, framework e/ou tecnologias usadas
+Neste projeto foi utlizado o frameork Cypress.io, e os casos de teste foram criados utlizando a linguagem JavaScript. 
+
+Para gerar dados de usuários, recorreu-se à API obtida em https://randomuser.me/ 
+
+- **Por que utilizar o Cypress?** - 
+
+# Como instalar e usar o projeto?
+
+
+

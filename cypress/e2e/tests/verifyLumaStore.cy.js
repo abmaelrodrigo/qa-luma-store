@@ -1,5 +1,7 @@
 /// <reference types="cypress" />
 
+import Body from "../pages/homepage/Body";
+import Footer from "../pages/homepage/Footer";
 import Header from "../pages/homepage/Header"
 
 
@@ -27,7 +29,7 @@ context('Verify if Homepage is laoding correctly', ()=>{
             Header.verifyCartIcon();
         })
 
-        it.only('Verify the Menu Navigation is present', ()=>{
+        it('Verify the Menu Navigation is present', ()=>{
             Header.verifyMenuNavigation();
         })
     })
@@ -41,7 +43,7 @@ context('Verify if Homepage is laoding correctly', ()=>{
         })
     })
 
-    context('Verify page Footer', ()=>{
+    context.only('Verify page Footer', ()=>{
         it('Verify the footer links are present', ()=>{
             Footer.verifyFooterLinks();
         })
