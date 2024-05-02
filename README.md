@@ -84,7 +84,11 @@ Neste projeto foi utlizado o frameork Cypress.io, e os casos de teste foram cria
 
 Para gerar dados de usuários, recorreu-se à API obtida em https://randomuser.me/ 
 
-- **Por que utilizar o Cypress?** - 
+- **Por que utilizar o Cypress?** - Além de seu tempo de execução rápido e de sua simplicidade e facilidade de uso, o Cypress possui uma sintaxe amigável e uma interface de usuário  intuitiva. Para esta suite de testes em especial que utiliza  casos de teste end-to-end, resolvi optar pelo Cypress também por poder acompanhar na interface de usuário do Cypress a execução dos testes, verificar onde eles estavam falhando e como aprimorá-los. 
+
+- **Por que não o Selenium?** - O Selenium pode ter uma curva de aprendizado mais íngreme devido à complexidade da API e da configuração. Além disso, como Selenium comunica com os navegadores externos por meio do WebDriver, pode ter tempos de execução mais lentos em comparação com o Cypress.
+
+- **Por que não o  Robot Framework?** - O Robot Framework pode não ser tão eficiente em termos de desempenho quanto o Cypress ou o Selenium, especialmente para testes complexos ou em larga escala. Ademais, embora seja fácil de usar, Robot Framework pode ter algumas limitações em termos de flexibilidade e personalização em comparação com outras ferramentas de automação de teste.
 
 # Como instalar e usar o projeto?
 

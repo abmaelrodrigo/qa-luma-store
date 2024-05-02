@@ -1,5 +1,6 @@
 /// <reference types="cypress" />
 
+import LoginAndCreateAccount from "../pages/LoginAndCreateAccount";
 import SearchResults from "../pages/SearchResults";
 import Body from "../pages/homepage/Body";
 import Footer from "../pages/homepage/Footer";
@@ -60,11 +61,34 @@ context('Verify the searching functionaly', ()=>{
     beforeEach(() => {
         cy.visit('https://magento.softwaretestingboard.com/');
     })
-    it.only('Verify serach for a term', ()=>{
+    it('Verify serach for a term', ()=>{
         // For this specific test case, we search for a term selecting the last option on Autocomplete
         // It also verifies if the search result page was loaded by verify Title, breadcrum and product grid
         Header.selectLastTermOnAutocomplete(searchTerms[0]);
         SearchResults.verifyGridOfProducts();
+        
+    })
+})
+
+context('Verify user checkout experience', ()=>{
+    beforeEach(() => {
+        cy.visit('https://magento.softwaretestingboard.com/');
+    })
+
+    it('Verify guest user can register',()=>{
+        cy.visit('https://magento.softwaretestingboard.com/customer/account/create/'); 
+        LoginAndCreateAccount.creatAnAccount();
+        LoginAndCreateAccount.verifyAccountIsCreated();
+
+    })
+
+    it.only('Add a product to the cart', ()=>{
+        // This test case is to navigate to a menswear page and add one ite to the cart
+
+        // Navigate to menswear page
+        Header.navigateToPLP('Men', 'Top');
+
+        // Add a product to the cart
         
     })
 })

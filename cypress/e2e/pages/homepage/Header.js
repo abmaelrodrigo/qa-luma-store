@@ -4,6 +4,7 @@ import logo from '../../../fixtures/logo.json';
 import searchBar from '../../../fixtures/searchBar.json'
 import cart from '../../../fixtures/cart.json'
 import SearchResults from '../SearchResults';
+import PLP from '../PLP';
 
 
 class Header {
@@ -88,6 +89,18 @@ class Header {
 
 
 
+
+    }
+
+    navigateToPLP(category, subcategory) {
+        cy.get('[id="store.menu"]')
+            .contains(category)
+            .parents('li')
+            .contains(subcategory)
+            .click({ force: true });
+
+        // Assert user is on PLP
+        PLP.verifyBreadcrumbs(category, subcategory);
 
     }
 
