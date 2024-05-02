@@ -3,6 +3,7 @@ import panelHeader from '../../../fixtures/panelHeader.json';
 import logo from '../../../fixtures/logo.json';
 import searchBar from '../../../fixtures/searchBar.json'
 import cart from '../../../fixtures/cart.json'
+import SearchResults from '../SearchResults';
 
 
 class Header {
@@ -51,15 +52,43 @@ class Header {
 
     verifyMenuNavigation() {
         var navMenuItems = ["What's New", "Women", "Men", "Gear", "Training", "Sale"]
-        navMenuItems.forEach((item,index)  => {
-            cy.get(`[id="ui-id-${index+3}"]`)
-            .then($itemProp => {
-                cy.wrap($itemProp[0].innerText).should('eq', item )
-            })
-    
+        navMenuItems.forEach((item, index) => {
+            cy.get(`[id="ui-id-${index + 3}"]`)
+                .then($itemProp => {
+                    cy.wrap($itemProp[0].innerText).should('eq', item)
+                })
+
 
         })
-       
+
+    }
+
+    selectLastTermOnAutocomplete(term) {
+
+        cy.get('[id="search"]')
+            .click()
+            .clear()
+            .type(`${term}`, { delay: 1500 })
+
+        cy.get('[id="search_autocomplete"]')
+            .find('[role="option"]')
+            .last()
+            .as('lastOption')
+            .find('span')
+            .then($optionProp => {
+                cy.get('@lastOption')
+                    .click()
+
+                // Verify if user has landd on Search results page: 
+                var searchTerm = $optionProp[0].innerText
+                SearchResults.verifyTitleAndBreadCrumb(searchTerm)
+
+
+            })
+
+
+
+
     }
 
 }

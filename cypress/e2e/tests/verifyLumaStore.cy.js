@@ -1,8 +1,11 @@
 /// <reference types="cypress" />
 
+import SearchResults from "../pages/SearchResults";
 import Body from "../pages/homepage/Body";
 import Footer from "../pages/homepage/Footer";
-import Header from "../pages/homepage/Header"
+import Header from "../pages/homepage/Header";
+
+let searchTerms = ["shirt", "pants"]
 
 
 context('Verify if Homepage is laoding correctly', ()=>{
@@ -43,12 +46,25 @@ context('Verify if Homepage is laoding correctly', ()=>{
         })
     })
 
-    context.only('Verify page Footer', ()=>{
+    context('Verify page Footer', ()=>{
         it('Verify the footer links are present', ()=>{
             Footer.verifyFooterLinks();
         })
         it('Verify the Copyright message is present', ()=>{
             Footer.verifyCopyrightMessage();
         })
+    })
+})
+
+context('Verify the searching functionaly', ()=>{
+    beforeEach(() => {
+        cy.visit('https://magento.softwaretestingboard.com/');
+    })
+    it.only('Verify serach for a term', ()=>{
+        // For this specific test case, we search for a term selecting the last option on Autocomplete
+        // It also verifies if the search result page was loaded by verify Title, breadcrum and product grid
+        Header.selectLastTermOnAutocomplete(searchTerms[0]);
+        SearchResults.verifyGridOfProducts();
+        
     })
 })
