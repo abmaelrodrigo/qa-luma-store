@@ -50,7 +50,7 @@ context('Verify if Homepage is laoding correctly', ()=>{
     })
 
     context('Verify page Footer', ()=>{
-        it('Verify the footer links are present', ()=>{
+        it.only('Verify the footer links are present', ()=>{
             Footer.verifyFooterLinks();
         })
         it('Verify the Copyright message is present', ()=>{
@@ -73,9 +73,9 @@ context('Verify the searching functionaly', ()=>{
 })
 
 context('Verify user checkout experience', ()=>{
-    beforeEach(() => {
+    /*beforeEach(() => {
         cy.visit('https://magento.softwaretestingboard.com/');
-    })
+    })*/
 
     it('Verify guest user can register',()=>{
         cy.visit('https://magento.softwaretestingboard.com/customer/account/create/'); 
@@ -96,7 +96,7 @@ context('Verify user checkout experience', ()=>{
 
     })
 
-    it.only('Verify user can leave a product review', ()=>{
+    it('Verify user can leave a product review', ()=>{
         // Navigate to menswear page
         Header.navigateToPLP('Men', 'Top');
 

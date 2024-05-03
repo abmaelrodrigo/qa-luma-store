@@ -1,4 +1,5 @@
 import userReview from '../../fixtures/user5StarReview.json'
+import Header from './homepage/Header';
 
 class PDP {
     addProductToCart() {
@@ -14,6 +15,14 @@ class PDP {
         cy.get('[id="product-addtocart-button"]')
             .click()
 
+        // Verify if product was added to cart
+        cy.get('[id="qty"]')
+            .then($prop => {
+                Header.verifyNumberOnItemCart($prop[0].value);
+
+            })
+
+
     }
 
     writeAReview() {
@@ -24,10 +33,10 @@ class PDP {
             .click({ force: true });
 
         cy.get('[id="nickname_field"]')
-            .type(userReview.nickname, {delay: 100});
+            .type(userReview.nickname, { delay: 100 });
 
         cy.get('[id="summary_field"]')
-            .type(userReview.summary, {delay: 100});
+            .type(userReview.summary, { delay: 100 });
 
         cy.get('[id="review_field"]')
             .type(userReview.review);
