@@ -92,5 +92,90 @@ Para gerar dados de usuários, recorreu-se à API obtida em https://randomuser.m
 
 # Como instalar e usar o projeto?
 
+A. Após fazer o git clone deste projeto para sua máquina local, acesse o diretório do projeto e siga os seguintes passos: 
+
+1. **Instalando o Cypress**: 
+`npm install cypress --save-dev`
+
+2. **Abrir o o painel interativo do Cypress**: 
+`npx cypress open`
+
+3. **Na página de boas vindas do Cypress**: clique em 'E2E Testing
+
+4. Selecione o browser de sua preferência
+
+5. Clique em 'Start E2E Testing'
+
+6. Será aberta a aba Specs
+
+7. Clique no caso de teste verifyLumaStore.cy 
+
+B. Você pode também rodar o porjeto no modo headless
+
+1. Após installar o Cypress, rode o seguinte código:
+`npx cypress run`
+
+
+# Casos te Teste
+
+Os casos de teste deste projeto forma baseados nos seguintes requerimentos: 
+
+1. Verificar se a página está carregando corretamente a home page.
+
+2. Buscar por shirt no menu superior e revisar se a página de resultados carregou corretamente. 
+    
+    2.2 Buscar por shirt no menu superior e clicar no último resultado sugerido. 
+
+3. Criar uma conta na tela de Login/Cadastro.
+
+4. Adicionar um produto no carrinho.
+
+    4.1 Adicionar um produto aleatório do catalogo de moda masculina no carrinho.
+
+5. Realizar checkout.
+
+6. Adicionar comentário em um produto aleatório do catálogo de moda masculina no carrinho.
+
+## Status de cada caso de teste: 
+1. Verificar se a página está carregando corretamente a home page: aprovado ✅
+
+2. Buscar por shirt no menu superior e revisar se a página de resultados carregou corretamente. 
+    
+    2.2 Buscar por shirt no menu superior e clicar no último resultado sugerido: aprovado ✅
+
+3. Criar uma conta na tela de Login/Cadastro: aprovado ✅
+
+4. Adicionar um produto no carrinho
+
+    4.1 Adicionar um produto aleatório do catalogo de moda masculina no carrinho: falhou ❌
+
+    **Resultado atual:** O carrinho não atualiza em relação à quantidade adicionada, e não há qualuqer feedback ao usuário de que o produto foi adicionado com sucesso
+
+5. Realizar checkout: BLOQUEADO 🟥
+
+    **Resultado atual:** a função de adicionar ao carrinho está bloqueado o fluxo de Checkout
+
+6. Adicionar comentário em um produto aleatório do catálogo de moda masculina no carrinho: aprovado ✅
+
+
+## Relatório
+
+Para gerar um relatório automático do teste, podemos utilizar o **Allure** 
+
+1. Primeiramente, instalamos o Allure: 
+
+    `brew install allure`
+
+2. Em seguida, acesse a raiz do projeto e rode o seguinte comando: 
+
+    `npm run test:allure`
+
+O relatório de testes sera criado e ao final de toda a execução o mesmo será exibido no navegador
+
+### Nota aos avaliadores: 
+
+1. Um dos testes obrigatórios era a conlusão do checkout, porém não pude elaborar os casos de teste pois o carrinho está apresentando um bug: ao tentar adionar um produto o carrinho permance vazio. A página do carrinho também exibe que não há produtos adicionados. 
+
+2. Em relação ao caso de teste de adicionar um comentário ao produto, nào há um feedback visual de que foi realizado com sucesso. Portanto, não foi possível realizar qualquer asserção. 
 
 

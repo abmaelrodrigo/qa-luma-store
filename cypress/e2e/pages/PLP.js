@@ -7,10 +7,10 @@ class PLP {
 
     }
 
-    navigateToPDP(){
+    navigateToPDP() {
         cy.get('[class="item product product-item"]')
-        .first()
-        .click();
+            .first()
+            .click();
 
     }
 }

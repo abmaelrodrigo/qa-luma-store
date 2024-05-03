@@ -104,9 +104,9 @@ class Header {
 
     }
 
-    verifyNumberOnItemCart(qty){
+    verifyNumberOnItemCart(qty) {
         cy.get('[class="counter-number"]')
-        .should('contain', qty)
+            .should('contain', qty)
     }
 
 }

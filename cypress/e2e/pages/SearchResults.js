@@ -11,9 +11,9 @@ class SearchResults {
 
     }
 
-    verifyGridOfProducts(){
+    verifyGridOfProducts() {
         cy.get('[class="item product product-item"]')
-        .should('be.visible');
+            .should('be.visible');
     }
 
 
