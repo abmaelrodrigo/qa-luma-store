@@ -9,6 +9,7 @@ class PLP {
 
     navigateToPDP(){
         cy.get('[class="item product product-item"]')
+        .first()
         .click();
 
     }

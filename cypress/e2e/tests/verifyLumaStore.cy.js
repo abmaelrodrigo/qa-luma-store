@@ -1,6 +1,8 @@
 /// <reference types="cypress" />
 
 import LoginAndCreateAccount from "../pages/LoginAndCreateAccount";
+import PLP from "../pages/PLP";
+import PDP from "../pages/PDP";
 import SearchResults from "../pages/SearchResults";
 import Body from "../pages/homepage/Body";
 import Footer from "../pages/homepage/Footer";
@@ -82,13 +84,26 @@ context('Verify user checkout experience', ()=>{
 
     })
 
-    it.only('Add a product to the cart', ()=>{
+    it('Verify user can add a product to the cart', ()=>{
         // This test case is to navigate to a menswear page and add one ite to the cart
 
         // Navigate to menswear page
         Header.navigateToPLP('Men', 'Top');
 
         // Add a product to the cart
-        
+        PLP.navigateToPDP();
+        PDP.addProductToCart();
+
+    })
+
+    it.only('Verify user can leave a product review', ()=>{
+        // Navigate to menswear page
+        Header.navigateToPLP('Men', 'Top');
+
+        // Add a product to the cart
+        PLP.navigateToPDP();
+
+        PDP.writeAReview();
+
     })
 })
