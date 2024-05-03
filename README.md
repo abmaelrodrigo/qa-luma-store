@@ -111,7 +111,7 @@ O relatório de testes será criado e ao final de toda a execução o mesmo ser�
 
 ### Nota aos avaliadores: 
 
-1. Um dos testes obrigatórios era a conclusão do checkout, porém não foi possível elaborar os casos de teste,pois o carrinho está apresentando um bug: ao tentar adicionar um produto, o carrinho permance vazio. A página do carrinho também informa que não há produtos adicionados. 
+1. Um dos testes obrigatórios era a conclusão do checkout, porém não foi possível elaborar os casos de teste, pois o carrinho está apresentando um bug: ao tentar adicionar um produto, o carrinho permanece vazio. A página do carrinho também informa que não há produtos adicionados. 
 
 2. Em relação ao caso de teste de adicionar um comentário ao produto, não há um feedback visual de que a ação foi realizada com sucesso. Portanto, não foi possível realizar qualquer asserção. 
 
